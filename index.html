@@ -3,25 +3,36 @@
 <head>
 	<title>CALCULATOR JuninhoGPT</title>
 	<style type="text/css">
+  		@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@900&display=swap');
+		html {
+			overflow-y: hidden;
+		}
 		body {
-			font-family: Arial, sans-serif;
+			font-family: 'Sansita Swashed', cursive;
+			font-size: 42px;
 			background-color: #f1f1f1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
 		}
 		#calculator {
 			width: 300px;
-			margin: 0 auto;
-			padding: 50px;
+			padding: 65px 50px;
 			border-radius: 50px;
 			box-shadow: 0 0 10px #121111;
 			background-color: black;
+			display: flex;
+			flex-direction: column;
 		}
 		#calculator h1 {
-			font-size: 24px;
+			font-size: inherit;
 			text-align: center;
 			margin-top: 0;
 			color: #938b8f;
 		}
 		#display {
+			display: block;
 			width: 100%;
 			height: 20px;
 			font-size: 20px;
@@ -34,6 +45,8 @@
 			color: #2c3e50;
 		}
 		.button {
+			flex-grow: 1;
+			flex-basis: auto;
 			width: 60px;
 			height: 60px;
 			font-size: 40px;
@@ -60,32 +73,41 @@
 		.equal:hover {
 			background-color: #e14a12;
 		}
+		.calc {
+			text-transform: uppercase;
+		}
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+		}
 	</style>
 </head>
 <body>
 	<div id="calculator">
-        <h1>CALCULATOR JuninhoGPT</h1>
-        <input type="text" id="display" readonly />
-        <br />
-		<button class="button" onclick="addToDisplay('7')">7</button>
-		<button class="button" onclick="addToDisplay('8')">8</button>
-		<button class="button" onclick="addToDisplay('9')">9</button>
-		<button class="button" onclick="addToDisplay('+')">+</button>
-		<br>
-		<button class="button" onclick="addToDisplay('4')">4</button>
-		<button class="button" onclick="addToDisplay('5')">5</button>
-		<button class="button" onclick="addToDisplay('6')">6</button>
-		<button class="button" onclick="addToDisplay('-')">-</button>
-		<br>
-		<button class="button" onclick="addToDisplay('1')">1</button>
-		<button class="button" onclick="addToDisplay('2')">2</button>
-		<button class="button" onclick="addToDisplay('3')">3</button>
-		<button class="button" onclick="addToDisplay('*')">*</button>
-		<br>
-		<button class="button" onclick="addToDisplay('0')">0</button>
-		<button class="button" onclick="addToDisplay('/')">/</button>
-		<button class="button clear" onclick="clearDisplay()">C</button>
-		<button class="button equal" onclick="calculate()">=</button>
+        <h1><span class="calc">calculator</span> JuninhoGPT</h1>
+		<div class="container">
+			<input type="text" id="display" readonly />
+			<br />
+			<button class="button" onclick="addToDisplay('7')">7</button>
+			<button class="button" onclick="addToDisplay('8')">8</button>
+			<button class="button" onclick="addToDisplay('9')">9</button>
+			<button class="button" onclick="addToDisplay('+')">+</button>
+			<br>
+			<button class="button" onclick="addToDisplay('4')">4</button>
+			<button class="button" onclick="addToDisplay('5')">5</button>
+			<button class="button" onclick="addToDisplay('6')">6</button>
+			<button class="button" onclick="addToDisplay('-')">-</button>
+			<br>
+			<button class="button" onclick="addToDisplay('1')">1</button>
+			<button class="button" onclick="addToDisplay('2')">2</button>
+			<button class="button" onclick="addToDisplay('3')">3</button>
+			<button class="button" onclick="addToDisplay('*')">*</button>
+			<br>
+			<button class="button" onclick="addToDisplay('0')">0</button>
+			<button class="button" onclick="addToDisplay('/')">/</button>
+			<button class="button clear" onclick="clearDisplay()">C</button>
+			<button class="button equal" onclick="calculate()">=</button>
+		</div>
     </div>
 
     <script>
